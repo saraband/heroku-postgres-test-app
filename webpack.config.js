@@ -1,3 +1,5 @@
+const webpack = require('webpack');
+
 module.exports = {
   entry: './src/client/index.js',
   mode: 'production',
@@ -15,5 +17,12 @@ module.exports = {
         }
       }
     ]
-  }
+  },
+  plugins: [
+    new webpack.DefinePlugin({
+      APP_BASE_URL: process.env.NODE_ENV === 'production'
+        ? JSON.stringify('https://heroku-postgres-test-magueule.herokuapp.com')
+        : JSON.stringify('http://localhost:3000')
+    })
+  ]
 }

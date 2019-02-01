@@ -10,7 +10,7 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch('http://localhost:3000/images', {
+    fetch(`${APP_BASE_URL}/images`, {
       headers: {
         'Content-Type': 'application/json',
         'Accept': 'application/json'
@@ -23,7 +23,7 @@ class App extends React.Component {
   render () {
     return (
       <div>
-        <h1>database</h1>
+        <h1>{APP_BASE_URL || 'database'}</h1>
         {this.state.images.map(({ url, id }) => <img key={id} src={url} alt={url} />)}
       </div>
     );
