@@ -16,6 +16,7 @@
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
     "sequelize": "^4.42.0",
+    "sequelize-cli": "^5.4.0",
     "webpack": "^4.29.0",
     "webpack-cli": "^3.2.1",
     "webpack-dev-server": "^3.1.14"
@@ -24,7 +25,6 @@
     "server": "./node_modules/.bin/babel-node ./src/server/index.js",
     "build": "./node_modules/.bin/webpack ./src/client/index.js",
     "dev": "./node_modules/.bin/webpack ./src/client/index.js --watch",
-
     "migrations": "./node_modules/.bin/sequelize db:migrate",
     "seeds_undo": "./node_modules/.bin/sequelize db:seed:undo:all",
     "seeds_generate": "./node_modules/.bin/sequelize db:seed:all",
